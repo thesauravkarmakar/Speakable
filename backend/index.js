@@ -139,11 +139,11 @@ async function predict() {
     switch (classId) {
       case 0:
         stopPredicting();
-        responsiveVoice.speak("I see " + a);
+        responsiveVoice.speak(a);
         break;    
       case 1:
         stopPredicting();
-        responsiveVoice.speak("I see " + b);
+        responsiveVoice.speak(b);
         break;
     }
     document.getElementById("prediction").innerText = predictionText;
