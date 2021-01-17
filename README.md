@@ -10,7 +10,7 @@ Here comes, Speakable, where we tried to create a user-friendly web application 
 
 ## :smile: Want to visit the website?
 
-Here, or watch [Demo Video]() 
+Here, https://speakableai.netlify.app/ or watch [Demo Video]() 
 
 ## :man_technologist: Technology Stack
 
@@ -25,7 +25,10 @@ Here, or watch [Demo Video]()
 ### Back-end
 <p float="left">
     <img src="https://cdn.worldvectorlogo.com/logos/tensorflow-2.svg" width="64" height="64" style="width:100%">
+     <img src="https://cdn.worldvectorlogo.com/logos/python-4.svg" width="64" height="64" style="width:100%">
+
 </p>
+
 
 
 ## :man_in_tuxedo: Author
@@ -36,4 +39,4 @@ Here, or watch [Demo Video]()
 ## :page_with_curl: Licence 
 
 - [GPLv3 license](https://github.com/thesauravkarmakar/Speakable/blob/main/LICENSE) 
-- Copyright 2020 :copyright: Team - HackBIT 
+- Copyright 2020 :copyright: Team - Ctrl Alt HACK
