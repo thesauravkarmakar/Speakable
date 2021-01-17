@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Webcam</title>
+	<link rel="stylesheet" href="./style.css">
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+	<script src="webcam.js"></script>
+	<script src="rps-dataset.js"></script>
+</head>
+
+<body>
+	<nav class="navbar">
+		<div class="max-width">
+			<div class="logo">
+				<a href="#home">Speakable</a>
+			</div>
+			<ul class="menu">
+				<li><a href="#home" class="menu-btn">Home</a></li>
+			</ul>
+			<div class="menu-btn">
+				<i class="fas fa-bars"></i>
+			</div>
+		</div>
+	</nav>
+	<div class="main" id="home">
+		<div class="section group">
+			<div class="col span_1_of_2">
+				<div class="video-space">
+					<video autoplay playsinline muted id="wc"></video>
+				</div>
+			</div>
+			<div class="col span_1_of_2">
+				<div class="container">
+					<input type="text" id="sample1" placeholder="Type Name of Action"><button class="go" onclick="input1();" id="counting"> &#8594</button>
+					<button type="button" id="0" onclick="handleButton(this);" class="hold">Hold</button>
+					<div id="sample-count1"><span id="change1"></span> Samples: <span id=count>0</span></div>
+					<p id="demo"></p>
+
+					<input type="text" id="sample2" placeholder="Type Name of Action"><button class="go" onclick="input2();" id="counting2"> &#8594</button>
+					<button type="button" id="1" onclick="handleButton(this);" class="hold">Hold</button><div id="sample-count2"><span id="change2"></span> Samples:<span id=count>0</span></div>
+					<p id="demo2"></p>
+					
+				</div>
+
+				<button class="button  arrow" id="train" onclick="doTraining()">Train Network</button><br>
+				<button type="button" id="startPredicting" onclick="startPredicting()">Start Detecting</button>
+			</div>
+		</div>
+
+	</div>
+	<script src="https://code.responsivevoice.org/responsivevoice.js?key=uJ3cVW46"></script>
+	<script src="index.js"></script>
+</body>
+
+</html>
