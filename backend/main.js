@@ -51,16 +51,16 @@ async function loadMobilenet() {
 
 async function train() {
   dataset.ys = null;
-  dataset.encodeLabels(3);
+  dataset.encodeLabels(2);
   model = tf.sequential({
     layers: [
       tf.layers.flatten({ inputShape: mobilenet.outputs[0].shape.slice(1) }),
       tf.layers.dense({ units: 100, activation: 'relu' }),
-      tf.layers.dense({ units: 3, activation: 'softmax' })
+      tf.layers.dense({ units: 2, activation: 'softmax' })
     ]
   });
   const optimizer = tf.train.adam(0.0001);
-  model.compile({ optimizer: optimizer, loss: 'categoricalCrossentropy' });
+  model.compile({ optimizer: optimizer, loss: 'categoricalCrossentropy' }); 
   let loss = 0;
   model.fit(dataset.xs, dataset.ys, {
     epochs: 10,
@@ -68,15 +68,18 @@ async function train() {
       onBatchEnd: async (batch, logs) => {
         loss = await logs.loss.toFixed(5);
         console.log('LOSS: ' + loss);
+        document.getElementById('dummy').innerHTML = loss + "<br> When magic number stops changing click below button ";
       }
     }
   });
-  alert("Training done. Now you can 'Start Predicting'");
 }
 
 function input1(){
   document.getElementById('demo').innerHTML = "<span style='color:#FF0000'>Hold to record upto 50 samples</span>"
-  // document.getElementById('counting').innerText.fontcolor = "red"
+}
+
+function input2(){
+  document.getElementById('demo2').innerHTML = "<span style='color:#FF0000'>Hold to record upto 50 samples</span>"
 }
 
 function timeoutClear() {
@@ -107,7 +110,7 @@ function handleButton(elem) {
       sample1++;
       timer = setTimeout(function() {
         handleButton(elem);
-      }, 200);
+      }, 1000);
       document.getElementById("sample-count1").innerText = " Samples: " + sample1;
       break;
     case "1":
