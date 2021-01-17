@@ -78,4 +78,20 @@ closeBtn.forEach(function (element, index) {
     });
 });
 
+var messageBox1 = document.querySelector('.js-message1');
+var btn1 = document.querySelector('.js-message-btn1');
+var card1 = document.querySelector('.js-profile-card1');
+var closeBtn1 = document.querySelectorAll('.js-message-close1');
 
+btn1.addEventListener('click', function (e) {
+    e.preventDefault();
+    card1.classList.add('active');
+});
+
+closeBtn1.forEach(function (element, index) {
+    console.log(element);
+    element.addEventListener('click', function (e) {
+        e.preventDefault();
+        card1.classList.remove('active');
+    });
+});

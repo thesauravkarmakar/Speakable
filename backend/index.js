@@ -146,8 +146,6 @@ async function predict() {
         responsiveVoice.speak(b);
         break;
     }
-    document.getElementById("prediction").innerText = predictionText;
-
 
     predictedClass.dispose();
     await tf.nextFrame();
