@@ -5,8 +5,8 @@
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
 ## :speech_balloon: About Speakable 
-Deaf people cannot speak an oral language or have some degree of speaking ability but prefer not to talk because atypical voices often draw negative or unwanted attention. Using sign language, these individuals communicate. But not everyone knows [ASL](https://www.nidcd.nih.gov/health/american-sign-language) who will understand them. Due to COVID-19, if a Deaf person somehow tried to speak, they can't because they're wearing masks. So, what's the resolution?   
-Here comes, Speakable, where we tried to create a user-friendly web application in which a Deaf person can record their sign language hand gestures, name them and it will convert the them to Sound. 
+Dumb people cannot speak an oral language or have some degree of speaking ability but prefer not to talk because atypical voices often draw negative or unwanted attention. Using sign language, these individuals communicate. But not everyone knows [ASL](https://www.nidcd.nih.gov/health/american-sign-language) who will understand them. Due to COVID-19, if a Deaf person somehow tried to speak, they can't because they're wearing masks. So, what's the resolution?   
+Here comes, Speakable, where we tried to create a user-friendly web application in which a Dumb person can record their sign language hand gestures, name them and it will convert the them to Sound. 
 
 ## :smile: Want to visit the website?
 
@@ -39,4 +39,4 @@ Here, https://speakableai.netlify.app/ or watch [Demo Video]()
 ## :page_with_curl: Licence 
 
 - [GPLv3 license](https://github.com/thesauravkarmakar/Speakable/blob/main/LICENSE) 
-- Copyright 2020 :copyright: Team - Ctrl Alt HACK
+- Copyright 2020 :copyright: Team - HackBIT
