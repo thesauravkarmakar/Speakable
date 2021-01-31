@@ -2,7 +2,7 @@ let mobilenet;
 let model;
 const webcam = new Webcam(document.getElementById('wc'));
 const dataset = new RPSDataset();
-var sample1 = 0, sample2 = 0;
+var sample1 = 0, sample2 = 0, sample3=0;
 let isPredicting = false;
 var skill_1 = document.getElementById('skill');
 var timer;
@@ -67,50 +67,35 @@ async function train() {
     callbacks: {
       onBatchEnd: async (batch, logs) => {
         loss = await logs.loss.toFixed(5);
-        console.log('LOSS: ' + loss);
-        document.getElementById('dummy').innerHTML = loss + "<br> When magic number stops changing click below button ";
+        document.getElementById('dummy').innerHTML = loss + "<br> When magic number stops changing click below button"
       }
     }
   });
 }
 
-function input1(){
-  document.getElementById('demo').innerHTML = "<span style='color:#FF0000'>Hold to record upto 50 samples</span>"
-}
-
-function input2(){
-  document.getElementById('demo2').innerHTML = "<span style='color:#FF0000'>Hold to record upto 50 samples</span>"
+function input(id){
+  document.getElementById(id).innerHTML = "<span style='color:#FF0000'>Hold to record upto 50 samples</span>"
 }
 
 function timeoutClear() {
   clearTimeout(timer);
 }
 
+function handleButton1(id){
+    var btn1 = document.getElementById(id);
+    btn1.addEventListener('mouseup', timeoutClear);
+    btn1.addEventListener('mouseleave', timeoutClear);
+}
+
 function handleButton(elem) {
-  var btn = document.getElementById('0');
-  var btn1 = document.getElementById('1');
-  btn.addEventListener('mousedown', function() {
-    handleButton();
-  });
-
-  btn.addEventListener('mouseup', timeoutClear);
-  
-  btn.addEventListener('mouseleave', timeoutClear);
-
-  btn1.addEventListener('mousedown', function() {
-    handleButton();
-  });
-
-  
-  btn1.addEventListener('mouseup', timeoutClear);
-  
-  btn1.addEventListener('mouseleave', timeoutClear);
+  var btn = document.getElementById(elem.id);
+  btn.addEventListener('mousedown', handleButton1(elem.id))
   switch (elem.id) {
     case "0":
       sample1++;
       timer = setTimeout(function() {
         handleButton(elem);
-      }, 1000);
+      }, 200);
       document.getElementById("sample-count1").innerText = " Samples: " + sample1;
       break;
     case "1":
@@ -174,7 +159,19 @@ async function init() {
   await webcam.setup();
   mobilenet = await loadMobilenet();
   tf.tidy(() => mobilenet.predict(webcam.capture()));
-
 }
 
 init();
+
+$(document).ready(function(){
+  $(this).on("click",".add",function(){
+    var newfield = '<div><input type="text" id="sample3" class="inputvalue" placeholder="Name of Gesture"><button class="go" onclick="input(\'demo3\');" id="counting3"> &#8594</button>  <button type="button" id=idCount onclick="handleButton(this);" class="hold">Hold</button><div class="change_count" id="sample-count3"><span id="change3"></span> Samples: <span id=count>0</span></div><p id="demo3"></p>';
+    $(".container").append(newfield);
+  });
+});
+
+var idCount = 0;
+$('.hold').each(function() {
+   $(this).attr('id', idCount);
+   idCount++;
+});
