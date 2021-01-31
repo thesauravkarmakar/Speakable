@@ -159,6 +159,7 @@ input{
 
 .main{
     text-align: center;
+    height: 100vh;
 }
 
 button{
@@ -170,10 +171,11 @@ button{
     transition: 0.4s ease-in;
     margin: 10px 0 0 0;
 }
-#sample-count1,#sample-count2{
-    display: inline;
 
+.change_count{
+    display: inline;
 }
+
 .hold{
     display: inline-block;
     height: 40px;
@@ -246,7 +248,6 @@ button{
 
   #startPredicting{
       padding: 0.5rem 1rem;
-      /* height: 50px; */
       border-radius: 10px;
       font-size: 1.5rem;
       margin-top: 1.5rem;
@@ -267,12 +268,25 @@ button{
       -webkit-transform: translateX(3px);
     }
   }
-  
+
+.instructions{
+    padding-top: 8%;
+    padding-left: 8%;
+}
+
+.points{
+    padding-top : 1%;
+    font-size: 1.2rem;
+}
 
 @media (max-width: 991px){
     .max-width{
         padding: 0 50px;
         max-width: 930px;
+    }
+
+    .instructions{
+        padding-top: 20%;
     }
 
     .menu-btn{
